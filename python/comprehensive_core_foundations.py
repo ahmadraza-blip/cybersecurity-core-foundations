@@ -1251,6 +1251,684 @@ print(fibonacci(3))
 print(fibonacci(4))
 print(fibonacci(5))
 
+# Day 31 to 60:
+# Set:
+nums = {1, 2, 3, 4}
+print(nums)
+# Empty set:
+set = set()
+print(set)
+print(type(set))
+# Create a set using set:
+s = set(["black", "red", "brown", "white", "yellow", "green"])
+print(s)
+print(type(s))
+# Sets are not have indexes because sets are unordered instead use a loop:
+s = set(["black", "red", "brown", "white", "yellow", "green"])
+for i in s:
+    print(i)
+# in and not in:
+s = set(["black", "red", "brown", "white", "yellow", "green"])
+print("black" in s)
+print("red" not in s)
+# Sets methods:
+s = set(["black", "red", "brown", "white", "yellow", "green"])
+s.add("blue")
+print(s)
+s.update(["orange", "golden", "purple"])
+print(s)
+s.remove("yellow")
+print(s)    # # if element not exist remove give error
+s.discard("orange")
+print(s)   # if element not exist discard not give error
+x = s.pop()
+print(x)
+print(s)
+s.clear()
+print(s)
+set = {"abdullah", "haris", "ali", "hassan"}
+set1 = set.copy()
+print("Original:", set)
+print("Copy:", set1)
+# Set operations:
+a = {1, 2, 3, 4, 5}
+b = {4, 5, 6, 7, 8}
+print(a.union(b))
+# union also represent by "|":
+print(b|a)
+print(a.intersection(b))
+# intersection alse represent by "&":
+print(b&a)
+print(a.difference(b))
+# difference also represent by "-":
+print(b-a)
+print(a.symmetric_difference(b))
+# symmetric_difference also represent by "^":
+print(b^a)
+a.difference_update(b)
+print(a)
+a = {1, 2, 3, 4, 5}
+b = {4, 5, 6, 7, 8}
+b.intersection_update(a)
+print(b)
+a.symmetric_difference_update(b)
+print(a)
+a = {2, 4, 6, 8, 10}
+b = {2, 4, 6, 8, 10}
+print(b.issubset(a))
+print(a.issuperset(b))
+print(b.isdisjoint(a))
+# Set comprehension:
+s = {x for x in range(5)}
+print(s)
+s = {x*x for x in range(5)}
+print(s)
+
+
+# Dictionaries and it's methods:
+data = {
+    "name" : "Hamza",
+    "age" : 25
+}
+print(data)
+# Empty dict:
+dict = {}
+print(dict)
+print(type(dict))
+# Access dict values:
+data = {
+    "name" : "Hamza",
+    "age" : 25
+}
+print(data["name"])
+print(data["age"])
+# Dict keys should be unique:
+data = {
+    "name" : "Hamza",
+    "age" : 25,
+    "name" : "AbuBakar",
+    "age" : 24
+}
+print(data["name"])
+print(data["age"])
+# Adding new item:
+data = {
+    "name" : "Hamza",
+    "age" : 25
+}
+print(data["name"])
+print(data["age"])
+data["city"] = "Islamabad"
+print(data)
+data["nationality"] = "Pakistan"
+print(data)
+# Changing a value:
+data = {
+    "name" : "Hamza",
+    "age" : 25
+}
+data["age"] = 24
+print(data)
+data["name"] = "Haris"
+print(data)
+# Deleting an item:
+data = {
+    "name" : "Hamza",
+    "age" : 25
+}
+print(data["name"])
+print(data["age"])
+data["city"] = "Islamabad"
+print(data)
+data["nationality"] = "Pakistan"
+print(data)
+del data["name"]
+print(data)
+del data["age"]
+print(data)
+# Dict methods:
+data = {
+    "name" : "Jameel",
+    "age" : 23,
+    "city" : "Lahore"
+}
+print(data.keys())
+print(list(data.keys()))
+print(data.values())
+print(tuple(data.values()))
+print(data.items())
+print(data.get("city"))
+print(data.get("name"))
+print(data.get("age"))
+data.update({"city" : "Karacki"})
+print(data)
+data.update({"friend_name" : "Usman"})
+print(data)
+data.pop("city")
+print(data)
+x = data.pop("friend_name")
+print(x)
+print(data)
+data.popitem()
+print(data)
+data.clear()
+print(data)
+data = {
+    "101" : "Usman",
+    "102" : "Ali",
+    "103" : "Khan_Muhammad"
+}
+copy = data.copy()
+print("Original:", data)
+print("Copy:", copy)
+x = data.setdefault("104" , "Khuram")
+print(data)
+data.setdefault("101" , "Osama")
+print(data)
+keys = ["name", "age", "city", "friend_name"]
+data = dict.fromkeys(keys,"unknown")
+print(data)
+# Checks keys exist or not:
+data = {
+    1 : "Ali",
+    2 : "Sami",
+    3 : "Osama", 
+    4 : "Hashir"
+}
+print(4 in data)
+print(1 not in data)
+# Loops through dict:
+data = {
+    1 : "Ali",
+    2 : "Sami",
+    3 : "Osama", 
+    4 : "Hashir"
+}
+for key,values in data.items():
+    print(key, ":", values)
+for key,values in data.items():
+    print(key, ":", values)
+print("Loop Finished")
+
+
+# Exception Handling:
+# Zero Division Error:
+try:
+    a = 10
+    b = 0
+    print(a / b)
+except ZeroDivisionError as e:
+    print("Error!",e)
+# Value Error: 
+try:
+    a = 10
+    b = Zero
+    print(a / b)
+except ValueError as e:
+    print("Error!",e)
+# Index error:
+try:
+    data = [1, 2, 3, 4, 5]
+    print(data.index(6))
+except IndexError as e:
+    print("Error!", e)
+# Type error:
+try:
+    name = "Ahmad"
+    password = input("Enter a password:")
+    if name == "Ahmad" | password == 181314:
+        print("Login")
+except TypeError as e:
+    print("Error!", e)
+# Key error:
+try:
+    data = {
+        "name" : "Ahmad",
+        "age" : 21
+    }
+    print(data["city"])
+except KeyError as e:
+    print("Error!",e)
+# Name error:
+try:
+    name = "Ahmad"
+    print(age)
+except NameError as e:
+    print("Error!", e)
+# File not found error:
+try:
+    with open(r"C:\Users\4hm46\OneDrive\Documents\VS Code\Python Projects\hello.01.py","r")as file:
+        print(file.read())
+except FileNotFoundError as e:
+    print("Error!",e)
+# try + except + else + finally:
+try:
+    name = "Ahmad"
+    password = input("Enter a password:")
+    if name == "Ahmad" or password == "181314":
+        print("Login")
+except NameError as e:
+    print("Error!", e)
+except TypeError as e:
+    print("Error!", e)
+finally:
+    print("Finished")
+try:
+    a = 10
+    num = input("Enter a num:")
+    result = a / num
+except ZeroDivisionError as e:
+    print("Error!",e)
+except TypeError as e:
+    print("Error!",e)
+else:
+    print("Result:", result)
+finally:
+    print("Finished")
+# Custome errors:
+# raise keyword:
+age = int(input("Enter your age:"))
+if age < 15:
+    raise Exception("Age must be 18 or 18 above!")
+else:
+    print("You are eligible for this post")
+name = input("Enter a name:")
+password = int(input('Enter a password:'))
+if name == "Ahmad" and password ==181314:
+    raise Exception("Name / Password must be correct!")
+else:
+    print("Login")
+# raise with built-in errors:
+num = int(input("Enter a num:"))
+if num < 0:
+    raise ValueError("num must be POSITIVE!")
+else:
+    print("Valid num")
+password = input("Enter a pass:")
+if password != 181314:
+    raise TypeError("Invalid datatype!")
+else:
+    print("Login")
+# raise with try + except + else + finally:
+try:
+   name = input("Enter a name:")
+   password = input("Enter a pass:")
+   if name == "Ahmad" and password != 181314:
+       raise ValueError("Invalid credential!") 
+except ValueError as e:
+    print(e)
+else:
+    print("Login")
+finally:
+    print("Completed")
+# Custom exception with try + except + else + finally:
+class InvalidData (Exception):
+    pass
+try: 
+    name = input("Enter a name:")
+    password = int(input("Enter a password:"))
+    if name != "Ahmad" or password != 181314:
+        raise InvalidData("Please enter correct data!")
+except InvalidData as e:
+    print(e)
+except ValueError as e:
+    print("Error : Password must be valid number!")
+else:
+    print("Login")
+finally:
+    print("Completed")
+
+
+# Short hand if-else:
+marks = int(input("Enter your marks:"))
+result = "Grade A+" if marks >90 <=100 else "Grade A" if marks >80 <=90 else "Grade B" if marks >70 <=80 else "Grade C" if marks > 60 <=70 else "Grade D" if marks >=50 <=60 else "Grade F" 
+print(result)
+marks = [45, 50, 56, 60, 67, 70, 78, 80, 89, 90, 99]
+result = ["Grade A+" if m >90 and m <=100 else "Grade A" if m >80 and  m <=90 else "Grade B" if m >70 and m <=80 else "Grade C" if m >60 and m <=70 else "Grade D" if m >=50 and m <=60 else "Grade F" for m in marks]
+print(result)
+
+
+# enumerate():
+colors = ["black", "white", "brown", "blue", "red", "orange"]
+for i,color in enumerate(colors):
+    print(i, color)
+    colors = ["black", "white", "brown", "blue", "red", "orange"]
+for i,color in enumerate(colors, start=1):
+    print(i, color)
+names = ["ali", "hassan", "abubakar", "hashir", "sami"]
+for i,name in enumerate(names, start=1):
+    print(f"{i} : {name}")
+name = "ahmad"
+for i,char in enumerate(name):
+    print(f"{i} : {char}")
+marks = [45, 50, 56, 60, 67, 70, 78, 80, 89, 90, 99]
+for i,mark in enumerate(marks, start =1):
+    if mark >=50 and mark <60:
+        print(f"{i} : {mark} : {"Grade D"}")
+    elif mark >=60 and mark <70:
+        print(f"{i} : {mark} : {"Grade C"}")
+    elif mark >=70 and mark <80:
+        print(f"{i} : {mark} : {"Grade B"}")
+    elif mark >=80 and mark <90:
+        print(f"{i} : {mark} : {"Grade A"}")
+    elif mark >=90 and mark <=100:
+        print(f"{i} : {mark} : {"Grade A+"}")
+    else:
+        print(f"{i} : {mark} : {"Grade F"}")
+names = ["ali", "hassan", "abubakar", "hashir", "sami"]
+x = list(enumerate(names))
+print(x)
+    
+
+# if __name == "__main__":
+def add(num1, num2):
+    return num1 + num2
+print(add(2, 4))
+if __name__ == "__main__":
+    print("Welcome")
+    print(__name__) 
+
+import hello_84
+print("import completed")
+print(__name__)
+
+
+# Logical and Global Variables:
+name = "Ahmad"
+def hello():
+    name = "Osama"
+    print(name)
+    age = 22
+    print(age)
+hello()
+print(name)
+
+
+# Modules:
+# date and datetime:
+import time
+current_time = time.strftime("%H : %M : %S")
+print(current_time)
+hour = int(time.strftime("%H"))
+result = "Good Morning" if hour >0 and hour <=6 else "Good Afternoon" if hour >6 and hour <=12 else print("Good Evening") if hour >12 and hour >=17 else "Good Night" 
+print(result)
+
+import datetime
+hour = datetime.datetime.now().hour
+print(hour)
+
+import datetime
+now = datetime.datetime.now()
+print(now)
+
+import datetime
+hour = datetime.datetime.now().hour
+if hour >0 and hour <=6:
+    print("Good Morning")
+elif hour >6 and hour <=12:
+    print("Good Afternoon")
+elif hour >12 and hour <=17:
+    print("Good Evening")
+else:
+    print("Good Night")
+
+# math():
+import math
+print(math.sqrt(25))
+print(math.pi)
+print(math.ceil(4.1))
+print(math.floor(4.9))
+print(math.factorial(15))
+# import a specific function:
+import math
+from math import sqrt
+print(math.sqrt(9))
+from math import ceil
+print(math.ceil(4.6))
+from math import floor
+print(math.floor(4.9))
+from math import factorial
+print(math.factorial(6))
+from math import pi
+print(math.pi)
+# importing multiple functions:
+from math import sqrt, ceil, floor, pi, factorial
+print(math.sqrt(8))
+print(math.pi)
+print(math.ceil(5.6))
+print(math.floor(7.9))
+print(math.factorial(7))
+
+# operator:
+# import everything using *
+from operator import *
+print(add(3, 5))
+print(sub(7, 5))
+print(mul(2, 3))
+print(floordiv(5, 7))
+print(pow(4, 6))
+print(truediv(4, 7))
+print(mod(2, 4))
+# import using as:
+from operator import add as py
+print(py(2, 3))
+print(py(4, 6))
+print(py(2, 4))
+print(py(5, 6))
+print(py(3, 6))
+print(py(1, 3))
+print(py(4, 6))
+
+# random:
+# import using as with multiple functions:
+from random import randint as a, choice as b
+print(a(1, 3))
+print(b(["Ahmad", "Ali", "Osama"]))
+# use dir:
+import random
+print(dir(random))
+
+# os:
+import os
+print(os.getcwd())
+print(os.listdir())
+os.mkdir("Folder")
+os.rename("Folder", "Folder1")
+os.system("rmdir /s /q Folder1")
+fd = os.open("ai.txt",os.O_CREAT)
+os.close(fd)
+f = os.open("ai2.txt",os.O_CREAT)
+os.close(f)
+os.remove("ai.txt")
+os.remove("ai2.txt")
+fd = os.open("ai3.txt",os.O_CREAT | os.O_WRONLY )
+os.write(fd, b"HELLO WORLD")
+os.close(fd)
+fd = os.open("ai3.txt",os.O_WRONLY)
+os.write(fd, b"HEY, EVERYONE")
+os.close(fd)
+os.remove("ai3.txt")
+print(os.path.exists("ai.txt"))
+print(os.path.isfile("hello.1.py"))
+print(os.path.isdir("hello.84"))
+os.makedirs("folder1/folder2/folder3")
+os.system('rmdir /s /q folder1')
+
+# File I/O:
+f = open("hello.1.py", "r")
+print(f.read())
+f.close()
+file = open("hello.5.py", "r")
+print(file.read())
+file.close()
+file = open("hello.86.py", "w")
+print(file.write("Hello Ahmad"))
+file.close()
+f = open("hello.86.py", "r")
+print(f.read())
+f.close()
+f = open("hello.86.py", "r")
+print(f.read(6))
+f.close()
+f = open("hello.86.py", "rt")
+print(f.read(11))
+f.close()
+f = open("hello.86.py", "a")
+f.write("Hello Osama")
+f.close()
+f = open("hello.86.py", "r")
+print(f.read())
+f.close()
+f = open("hello.88.py", "x")
+f.write("Hello")
+f.close()
+import os
+os.remove("hello.86.py")
+os.remove("hello.88.py")
+file = open("hello.1.py", "r")
+print(file.readline())
+print(file.readline())
+file.close()
+f = open("hello.1.py", "r")
+print(f.readlines())
+f.close()
+with open("hello.1.py", "r") as f:
+    for line in f:
+        print(line)
+with open("hello.7.py", "r")as file:
+    for line in file:
+        print(line)
+with open("hello.1.py", "r")as f:
+    lines = f.readlines()
+    for line in lines:
+        print(line)
+with open("hello.86.py", "x")as f:
+    lines = f.write("Hello World")
+with open("hello.86.py", "w")as f:
+    lines = f.write("Hello Ahmad")
+with open("hello.86.py", "a")as f:
+    lines = f.write("Hello Osama, Hello AbuBakar")
+with open("hello.86.py", "r")as f:
+    for line in f:
+        print(line)
+with open("hello.86.py", "r")as f:
+    while True:
+        line =f.readline()
+        if not line:
+            break
+        print(line)
+f.close()
+with open("hello.1.py", "r")as f:
+    while True:
+        lines = f.readline()
+        if not lines:
+            break
+        print(lines)
+f.close()
+import os
+os.remove("hello.86.py")
+data = ["ahmad\n", "osama\n", "abubakar\n"]
+with open("hello.86.py", "w")as f:
+    f.writelines(data)
+with open("hello.86.py", "r")as f:
+    for line in f:
+        print(line)
+
+# File Pointer:
+with open("hello.86.py", "r")as f:
+    f.read(5)
+    print(f.tell())
+with open("hello.86.py", "r")as f:
+    print(f.seek(2))
+    print(f.readline())
+with open("hello.86.py", "r")as f:
+    print(f.seek(3))
+    print(f.readline())
+    print(f.tell())
+    print(f.readline())
+with open("hello.86.py", "r+")as f:
+    f.truncate(1)
+import os
+os.remove("hello.86.py")
+
+# Lambda function:
+square = lambda x : x * x
+print(square(5))
+add = lambda a, b : a + b
+print(add(2, 3))
+subtract = lambda c, d :c - d
+print(subtract(5, 6))
+multiply = lambda e : e * 4
+print(multiply(4))
+f = lambda a, b, c, d, e : a + b - c * d / e
+print(f(2, 3, 4, 5, 6))
+
+# Lambda as a argument to another function:
+def add(a, b):
+    return 2 + a(b)
+print(add(lambda x : x + 2, 5))
+def define(f, b):
+    return 2 - f(b)
+print(define(lambda a, : a + 2, 10 ))
+def sol(a, b):
+    return 2 * a(b)
+print(sol(lambda var : var * 1, 3))
+
+# Use if-else:
+check = lambda x : "Even" if x%2 == 0 else "Odd"
+print(check(2))
+name = input("Enter a name :")
+password = int(input("Enter a password:"))
+check = lambda name, password : "Login" if name == "Ahmad" and password == 181314 else "Login Failed"
+user_name = input("Enter a name:")
+user_password = int(input("Enter a password:"))
+result = check(user_name, user_password)
+print(result)
+
+# Map(), Filter(), Reduce() functions:
+# Map():
+nums = [1, 2, 3, 4, 5]
+check = list(map(lambda x : x + 2, nums))
+print(check)
+nums = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+result = list(map(lambda a : a * 3, nums))
+print(result)
+nums = [2, 3, 4, 5]
+result = list(map(lambda d : "Ever" if d%2 == 0 else "Odd", nums))
+print(result)
+
+# Filter():
+nums = [2, 3, 4, 5]
+check = list(filter(lambda a : a >= 3, nums))
+print(check)
+nums = [2, 3, 4, 5]
+result = list(filter(lambda d : d%2 == 0, nums))
+print(result)
+
+# Reduce():
+from functools import reduce
+nums = [1, 2, 3, 4]
+result = reduce(lambda x, a : x + a, nums)
+print(result)
+from functools import reduce
+nums = [1, 2, 3, 4]
+result = reduce(lambda x, y : x * y, nums)
+print(result)
+    
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
